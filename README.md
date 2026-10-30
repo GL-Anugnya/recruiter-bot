@@ -57,7 +57,7 @@ recruiter-bot/
 ### Step 1: Clone the repository
 
 ```bash
-git clone <your-repository-url>
+git clone https://github.com/GL-Anugnya/recruiter-bot
 cd recruiter-bot
 ```
 
