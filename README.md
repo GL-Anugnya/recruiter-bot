@@ -25,6 +25,26 @@ The repository also includes the SQL Detective Challenge submission from Part 2.
 | SQL | Database queries and SQL challenge |
 | Pytest | Automated testing of matching logic |
 
+
+## System Architecture
+
+The Recruiter Bot follows a simple API-driven architecture. FastAPI handles incoming requests, the matching engine calculates and ranks matches, and SQLite stores the candidate and job data.
+
+```mermaid
+flowchart TD
+    A["Client / API Request"] --> B["FastAPI - main.py"]
+    B --> C["Matching Engine - matching.py"]
+    C --> D[("SQLite Database - recruiter.db")]
+    D --> C
+    C --> E["Calculate Match Scores"]
+    E --> F["Rank Candidates / Jobs"]
+    F --> G["JSON Response"]
+
+    H["schema.sql"] --> I["seed.py"]
+    I --> D
+```
+
+
 ## 3. Project Structure
 
 ```text
